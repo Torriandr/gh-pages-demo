@@ -22,8 +22,8 @@
     "start": "react-scripts start",
     "serve": "json-server --watch ./src/server/db/index.js --routes ./src/server/routes.json --port 3001",
     "save-json-api": "node ./src/scripts/save-json-api.js",
-    "build": "react-scripts build && npm run save-json-api",
-    "predeploy": "rm -rf build && npm run build",
+    "build": "react-scripts build && npm run save-json-api && shx cp build/index.html build/404.html",
+    "predeploy": "del build && npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -49,6 +49,7 @@
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "json-server": "^0.17.3",
-    "node-fs": "^0.1.7"
+    "node-fs": "^0.1.7",
+    "shx": "^0.3.4"
   }
 }

@@ -1,5 +1,5 @@
 const fs = require('node-fs');
-const getDb = require('../db');
+const getDb = require('../server/db/index.js');
 
 const db = getDb();
 
